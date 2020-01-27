@@ -21,6 +21,7 @@ gem 'puma', '~> 3.11'
 gem "figaro"
 gem 'pg'
 gem 'devise_token_auth'
+gem 'jwt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
