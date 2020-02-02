@@ -1,13 +1,13 @@
 class V1::ProductsController < ApplicationController
-    before_action :authenticate_request!
-
+    before_action :authenticate_request!, except: [:index, :show]
+    
     def index
         @product = Product.all
         render json: @product, status: 200
     end
 
     def create
-        @product = Product.new(product_params)
+        @product = current_user.products.create(product_params)
 
         if @product.save
             render json: @product, status: 201
