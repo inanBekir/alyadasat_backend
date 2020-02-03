@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  unique_id: MyString
+  title: MyString
+  description: MyString
+  price: 1.5
+  latitude: 1.5
+  longitude: 1.5
+  favori_amount: 1
+  is_solid: false
+  is_active: false
+
+two:
+  unique_id: MyString
+  title: MyString
+  description: MyString
+  price: 1.5
+  latitude: 1.5
+  longitude: 1.5
+  favori_amount: 1
+  is_solid: false
+  is_active: false
