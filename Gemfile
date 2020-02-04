@@ -22,6 +22,7 @@ gem "figaro"
 gem 'pg'
 gem 'devise_token_auth'
 gem 'jwt'
+gem 'searchkick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

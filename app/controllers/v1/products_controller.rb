@@ -2,8 +2,14 @@ class V1::ProductsController < ApplicationController
     before_action :authenticate_request!, except: [:index, :show]
     
     def index
-        @product = Product.all
-        render json: @product, status: 200
+        search = params[:term].present? ? params[:term] : nil
+        if search
+            @product = Product.search(search)
+            render json: @product, status: 200
+        else
+            @product = Product.search "*"
+            render json: @product, status: 200
+        end
     end
 
     def create
@@ -41,6 +47,6 @@ class V1::ProductsController < ApplicationController
      
      def product_params
         params.permit(:unique_id, :title, :price, :description, :latitude, 
-        :longitude, :favori_amount, :is_solid, :is_active)
+        :longitude, :favori_amount, :is_solid, :is_active, :term)
      end
 end
